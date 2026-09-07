@@ -11,8 +11,10 @@ final class WelcomeController extends AbstractController
     #[Route('/', name: 'app_welcome')]
     public function index(): Response
     {
+        $currentDate = new \DateTimeImmutable('now',new \DateTimeZone('Europe/Paris'));
+
         return $this->render('welcome/index.html.twig', [
-            'controller_name' => 'WelcomeController',
+            'currentDate' => $currentDate->format('H:m d/M/Y'),
         ]);
     }
 }

@@ -17,7 +17,7 @@ final class WelcomeController extends AbstractController
         $appName = $translator->trans('DigitalFirstSteps');  // Pour forcer la traduction en français voici la commande : php bin/console debug:translation fr --only-missing///
         $logger->info('Application starting');
         return $this->render('welcome/index.html.twig', [
-            'currentDate' => $currentDate->format('H:m d/M/Y'),
+            'currentDate' => $currentDate->format('H:i d/m/Y'),
             'appName' => $appName
         ]);
     }
